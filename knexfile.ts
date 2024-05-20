@@ -6,8 +6,7 @@ const config: Knex.Config = {
   client: 'pg',
   connection: process.env.POSTGRES_PRISMA_URL + (process.env.NODE_ENV === 'development' ? '' : 'sslmode=require'),
   migrations: {
-    extension: 'ts',
-    tableName: 'knex_migrations',
+    extension: 'ts'
   },
 };
 

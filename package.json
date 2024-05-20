@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:migrate": "set TS_NODE_COMPILER_OPTIONS={\"module\":\"commonjs\"} && knex migrate:latest",
-    "db:migrate:undo": "set TS_NODE_COMPILER_OPTIONS={\"module\":\"commonjs\"} && knex migrate:down",
-    "db:migrate:make": "set TS_NODE_COMPILER_OPTIONS={\"module\":\"commonjs\"} && knex migrate:make",
+    "db:migrate": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' knex migrate:latest",
+    "db:migrate:undo": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' knex migrate:down",
+    "db:migrate:make": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' knex migrate:make",
     "vercel-build": "prisma generate && pnpm db:migrate && next build"
   },
   "dependencies": {
