@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import db from "@/db/db";
 import { notFound } from "next/navigation";
 import fs from "fs/promises";
+
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
     const product = await db.product.findUnique({ where: { id: params.id }, select: { filePath: true, name: true } })
 
